@@ -1,0 +1,44 @@
+'use strict';
+
+angular.module('WalletApp.currency.currencyService', [])
+  .factory('currencyService', ['$q', 'Currency', function($q, Currency){
+    var _currencyInstance;
+    var checkCurrencyInstance = function(){
+      if(!_currencyInstance){
+        _currencyInstance = new Currency();
+      }
+
+      return _currencyInstance;
+    };
+    var _userCurrency = checkCurrencyInstance().getUserCurrency();
+
+    var currencyManager = {
+      getAllCurrencies: function(){
+        return checkCurrencyInstance().getCurrencies();
+      },
+      getUserCurrency: function(){
+        var deferred = $q.defer();
+
+        if(_userCurrency){
+          deferred.resolve(_userCurrency);
+        } else {
+          deferred.reject();
+        }
+        return deferred.promise;
+      },
+      setUserCurrency: function(currency){
+        var deferred = $q.defer();
+        var _response = checkCurrencyInstance().setUserCurrency(currency);
+        _userCurrency = currency;
+
+        if(_response.name === _userCurrency.name){
+          deferred.resolve(_userCurrency);
+        } else {
+          deferred.reject();
+        }
+        return deferred.promise;
+      }
+    };
+
+    return currencyManager;
+  }]);

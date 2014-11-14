@@ -5,15 +5,23 @@
     <title>Wallet</title>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script>window.angular || document.write('<script src="./libs/angular.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+    <script>angular.module("ngRoute") || document.write('<script src="./libs/angular-route.min.js"><\/script>')</script>
 
     <script src="./app/app.js"></script>
+    <script src="./app/wallet/wallet_controller.js"></script>
+    <script src="./app/currency/currency_controller.js"></script>
+    <script src="./app/currency/currency_class.js"></script>
+    <script src="./app/currency/currency_service.js"></script>
+    <script src="./app/shared_components/shared_services.js"></script>
+
 </head>
 <body>
     <nav>
         <li>
-            <ul>Home</ul>
-            <ul>Reset</ul>
-            <ul>View Source</ul>
+            <ul><a href="./index.html#/wallet">Home</a></ul>
+            <ul><a href="./index.html#/reset">Reset</a></ul>
+            <ul><a href="./index.html#/source">View source</a></ul>
         </li>
     </nav>
     <section ng-view>
