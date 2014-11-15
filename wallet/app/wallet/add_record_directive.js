@@ -12,11 +12,8 @@ angular.module('WalletApp.WalletView.addRecordDirective', [])
         scope.record = {
           add: true
         }
-        scope.intener = {};
-        scope.email = {};
 
         scope.addRecord = function(recordData){
-          console.log(recordData);
           recordData.date = new Date();
           scope.add()(recordData);
         }
