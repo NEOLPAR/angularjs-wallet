@@ -6,7 +6,8 @@ var WalletApp = angular.module('WalletApp', [
   'WalletApp.CurrencyView',
   'WalletApp.SharedServices',
   'WalletApp.CurrencyView.CurrencyClass',
-  'WalletApp.currency.currencyService'
+  'WalletApp.CurrencyView.currencyService',
+  'WalletApp.CurrencyView.currencyDirective'
 ]);
 
 WalletApp.config(['$routeProvider', function($routeProvider) {
@@ -19,16 +20,21 @@ WalletApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: './app/wallet/wallet_template.html',
       controller: 'WalletController',
       resolve: {
-        checkCurrency: function(){
-          //TODO: if !currency location currency
-          console.log("wallet");
+        checkCurrency: function($rootScope, $location, currencyService){
+          currencyService.checkCurrency(
+            function(exist){
+              if(!exist){
+                $location.path('/currency');
+              }
+            });
         }
       }
     })
     .when('/reset', {
       resolve: {
-        reset: function(resetService){
-          resetService();
+        reset: function($location, currencyService){
+          currencyService.removeUserCurrency();
+          $location.path('/currency');
         }
       }
     })
