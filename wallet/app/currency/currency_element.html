@@ -1,1 +1,1 @@
-<li ng-repeat="currency in currencies" ng-click="chooseCurrency(currency)">{{currency.sign}}</li>
+<li ng-repeat="currency in currencies" ng-click="chooseCurrency(currency)" ng-bind-html="currency.sign|html"></li>

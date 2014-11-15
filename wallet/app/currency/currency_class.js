@@ -5,13 +5,13 @@ angular.module('WalletApp.CurrencyView.CurrencyClass', [])
     var Currency = function(){};
     var _possibleCurrencies = [{
             name: "pound",
-            sign: "£"
+            sign: "&pound;"
           },{
             name: "euro",
-            sign: "€"
+            sign: "&euro;"
           },{
             name: "dollar",
-            sign: "$"
+            sign: "&dollar;"
           }];
     var _ls = "WalletApp.userCurrency";
 

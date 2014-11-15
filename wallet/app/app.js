@@ -7,7 +7,8 @@ var WalletApp = angular.module('WalletApp', [
   'WalletApp.SharedServices',
   'WalletApp.CurrencyView.CurrencyClass',
   'WalletApp.CurrencyView.currencyService',
-  'WalletApp.CurrencyView.currencyDirective'
+  'WalletApp.CurrencyView.currencyDirective',
+  'WalletApp.CurrencyView.currencyFilter'
 ]);
 
 WalletApp.config(['$routeProvider', function($routeProvider) {
