@@ -1,0 +1,23 @@
+<div>
+    <form name="addRecordForm" novalidate ng-submit="addRecord(record)">
+        <div class="onoffswitch">
+            <input type="checkbox" id="myonoffswitch" class="onoffswitch-checkbox" name="onoffswitch" required
+                   ng-model="record.add"/>
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
+        <div>
+            <input type="number" name="amount" min="0.01" placeholder="Amount" step="0.01" required
+                   ng-model="record.amount"/>
+            <span ng-show="addRecordForm.amount.$error.number">
+                The value must be a number!
+            </span>
+            <span ng-show="addRecordForm.amount.$error.min">
+                The value must be positive and different of 0!
+            </span>
+        </div>
+        <button type="submit" ng-disabled="addRecordForm.$invalid" class="button radius">Submit</button>
+    </form>
+</div>

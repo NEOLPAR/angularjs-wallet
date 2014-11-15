@@ -9,7 +9,8 @@ var WalletApp = angular.module('WalletApp', [
   'WalletApp.CurrencyView.currencyFilter',
   'WalletApp.WalletView',
   'WalletApp.WalletView.walletService',
-  'WalletApp.WalletView.RecordClass'
+  'WalletApp.WalletView.RecordClass',
+  'WalletApp.WalletView.addRecordDirective'
 ]);
 
 WalletApp.config(['$routeProvider', function($routeProvider) {
