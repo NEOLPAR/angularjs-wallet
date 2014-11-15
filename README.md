@@ -17,3 +17,7 @@ Instructions
 9. The wallet can never contain a negative amount.
 9. The method of adding/removing values to a wallet can be via separate inputs or a single combined input with a select box for add/remove.
 10. There is no limit to the amount of values added or removed in the wallet.
+
+Extras
+------
+1. Added several currencies and the option to set your currency. If you haven't choosen any currency, you will be redirected to the currencies view.

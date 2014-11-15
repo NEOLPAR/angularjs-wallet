@@ -2,13 +2,14 @@
 
 var WalletApp = angular.module('WalletApp', [
   'ngRoute',
-  'WalletApp.WalletView',
   'WalletApp.CurrencyView',
-  'WalletApp.SharedServices',
   'WalletApp.CurrencyView.CurrencyClass',
   'WalletApp.CurrencyView.currencyService',
   'WalletApp.CurrencyView.currencyDirective',
-  'WalletApp.CurrencyView.currencyFilter'
+  'WalletApp.CurrencyView.currencyFilter',
+  'WalletApp.WalletView',
+  'WalletApp.WalletView.walletService',
+  'WalletApp.WalletView.RecordClass'
 ]);
 
 WalletApp.config(['$routeProvider', function($routeProvider) {

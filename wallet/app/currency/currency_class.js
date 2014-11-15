@@ -14,8 +14,7 @@ angular.module('WalletApp.CurrencyView.CurrencyClass', [])
             sign: "&dollar;"
           }];
     var _ls = "WalletApp.userCurrency";
-
-    function _checkCurrency(currency){
+    var _checkCurrency = function (currency){
       return _possibleCurrencies.indexOf(currency) !== -1;
     }
 
