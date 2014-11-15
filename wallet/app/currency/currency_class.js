@@ -35,6 +35,11 @@ angular.module('WalletApp.CurrencyView.CurrencyClass', [])
         if(_userCurrency){
           return JSON.parse(_userCurrency);
         }
+      },
+      removeUserCurrency: function(){
+        localStorage.removeItem(_ls);
+
+        return true;
       }
     };
 

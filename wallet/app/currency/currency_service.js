@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('WalletApp.currency.currencyService', [])
+angular.module('WalletApp.CurrencyView.currencyService', [])
   .factory('currencyService', ['$q', 'Currency', function($q, Currency){
     var _currencyInstance;
     var checkCurrencyInstance = function(){
@@ -13,6 +13,16 @@ angular.module('WalletApp.currency.currencyService', [])
     var _userCurrency = checkCurrencyInstance().getUserCurrency();
 
     var currencyManager = {
+      checkCurrency: function(exist){
+        var response = this.getUserCurrency().then(
+          null,
+          function(){
+            exist(false);
+          }
+        );
+
+        return response;
+      },
       getAllCurrencies: function(){
         return checkCurrencyInstance().getCurrencies();
       },
@@ -37,6 +47,9 @@ angular.module('WalletApp.currency.currencyService', [])
           deferred.reject();
         }
         return deferred.promise;
+      },
+      removeUserCurrency: function(){
+        return _currencyInstance.removeUserCurrency();
       }
     };
 
