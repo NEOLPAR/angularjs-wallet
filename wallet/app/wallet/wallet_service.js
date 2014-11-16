@@ -3,14 +3,19 @@
 angular.module('WalletApp.WalletView.walletService', [])
   .factory('walletService', ['Record', function(Record){
     var _recordList = new Array();
-    var _totalAmount;
+    var _totalAmount = {
+      length: 0,
+      total: 0
+    };
     var _calculateTotals = function(){
       var recordListLength = _recordList.length;
+      var length = 0;
       var total = 0;
 
       for(var i = 0; i < recordListLength; i++){
         var record = _recordList[i];
-        total += record.amount;
+        length++;
+        total = (record.add === true) ? total + record.amount : total - record.amount;
       }
 
       return total;
@@ -31,11 +36,12 @@ angular.module('WalletApp.WalletView.walletService', [])
         return _recordList;
       },
       getTotalAmount: function(){
-        if(!_totalAmount){
-          _totalAmount = _calculateTotals();
+        //update only if it is necessary
+        if(_totalAmount.length !== _recordList.length){
+          _totalAmount.total = _calculateTotals();
         }
 
-        return _totalAmount;
+        return _totalAmount.total;
       }
     };
 
