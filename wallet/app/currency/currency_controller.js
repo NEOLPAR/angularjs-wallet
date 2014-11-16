@@ -8,12 +8,8 @@ angular.module('WalletApp.CurrencyView', [])
 
     $scope.chooseCurrency = function(currency){
       currencyService.setUserCurrency(currency).then(
-        function(success){
-          console.log("bien");
+        function(){
           $location.path('/wallet');
-        },
-        function(error){
-          console.log("error");
         }
       );
     }

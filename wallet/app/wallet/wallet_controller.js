@@ -3,8 +3,6 @@
 angular.module('WalletApp.WalletView', [])
   .controller('WalletController', ['$scope', 'walletService', 'currencyService', function($scope, walletService, currencyService){
     console.log("WalletController");
-    //TODO init load records
-    //TODO save records
     var updateScope = (function update(){
       $scope.totalAmount = walletService.getTotalAmount();
       $scope.records = walletService.getAllRecords();
@@ -16,8 +14,16 @@ angular.module('WalletApp.WalletView', [])
     })();
 
     $scope.addRecord = function(recordData){
-      $scope.records = walletService.addRecord(recordData);
-      updateScope();
+      walletService.addRecord(recordData).then(
+        function(records){
+          $scope.records = records;
+          updateScope();
+        },
+        function(){
+          //TODO alert directive
+          alert("The wallet must be always positive amount.");
+        }
+      );
     };
 
 
