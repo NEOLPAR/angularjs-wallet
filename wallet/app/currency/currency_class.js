@@ -4,7 +4,7 @@ angular.module('WalletApp.CurrencyView.CurrencyClass', [])
   .factory('Currency', [function(){
     var Currency = function(){};
     var _possibleCurrencies = [{
-            name: "pound",
+            name: "gbp",
             sign: "&pound;"
           },{
             name: "euro",
