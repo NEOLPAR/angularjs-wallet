@@ -1,7 +1,9 @@
 <ul>
     <li ng-repeat="record in records track by $index" ng-class="{'negative-color': record.add == 0}">
         <span>{{record.date | dateFormat}}</span>
-        <span>{{record.amount | currency:''}}</span>
-        <span ng-bind-html="currency.sign | html"></span>
+        <div class="amount-currency">
+            <span>{{record.amount | currency:''}}</span>
+            <span ng-bind-html="currency.sign | html"></span>
+        </div>
     </li>
 </ul>

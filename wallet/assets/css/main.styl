@@ -1,2 +1,108 @@
+@import 'nib'
+@import 'normalize.css'
+@import 'font-awesome.min.css'
+@import 'toggle-switch.css'
+
+dark_red=#8f0000
+light_blue=#9AD6E3
+light_red= #FF9494
+
 .negative-color
-  color: red;
+  color: dark_red;
+
+#wallet-wrapper
+  header
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    width: 100%;
+    overflow hidden
+    add-record-dir
+      min-width 430px
+      margin 0
+      float: left;
+      padding-left 20px;
+      form
+        height: 100%;
+        & > *
+          float: left
+          margin 0 5px
+        input, button, .formError
+          margin-top: 13px;
+        .formError
+          background: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin: 0;
+          padding: 0;
+          .formErrorPanel
+            background dark_red
+            color #ffffff
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin auto
+            width 480px
+            height 50px
+            text-align: center;
+            line-height: 2.5;
+            font-size: 130%;
+            .warning
+              margin-top: 4px;
+              float: left;
+              width: 0;
+              height: 0;
+              border-left: 20px solid transparent;
+              border-right: 20px solid transparent;
+              border-bottom: 40px solid #ff0;
+    .width-limit
+      min-width: 480px;
+      max-width: 750px;
+      margin: auto;
+    total-dir
+      margin 0
+      padding-right 20px
+      font-size: 2.5em;
+      float: right;
+  article
+    record-list-dir
+      ul
+        min-width: 480px
+        max-width: 750px
+        margin 0 auto
+        padding 0
+        list-style: none;
+        border-radius 1px
+        li
+          padding 10px
+          & .amount-currency
+            float right
+          &:last-child
+            border-radius 0 0 5px 5px
+          &:nth-child(2n)
+            background lighten(light_blue, 20%)
+            &.negative-color
+              background lighten(light_red, 20%)
+          &:nth-child(2n+1)
+            background light_blue
+            &.negative-color
+              background light_red
+
+@media (min-width: 992px)
+  nav
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    ul
+      margin: inherit;
+      li
+        display inline-block
+        height: 100%;
+        padding: 10px;

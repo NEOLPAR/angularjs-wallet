@@ -2,7 +2,6 @@
 
 angular.module('WalletApp.WalletView', [])
   .controller('WalletController', ['$scope', 'walletService', 'currencyService', function($scope, walletService, currencyService){
-    console.log("WalletController");
     var updateScope = (function update(){
       $scope.totalAmount = walletService.getTotalAmount();
       $scope.records = walletService.getAllRecords();
@@ -12,7 +11,7 @@ angular.module('WalletApp.WalletView', [])
 
       return update;
     })();
-
+    $scope.wrapperId = "wallet";
     $scope.addRecord = function(recordData){
       walletService.addRecord(recordData).then(
         function(records){

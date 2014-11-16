@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Wallet</title>
-    <link rel="stylesheet" href="./assets/css/toggle-switch.css"/>
-    <link rel="stylesheet" href="./assets/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="./assets/css/main.css"/>
 </head>
 <body>
@@ -16,7 +14,7 @@
             <li><a href="https://github.com/NEOLPAR/angularjs-wallet" target="_blank">View source</a></li>
         </ul>
     </nav>
-    <section ng-view>
+    <section ng-view ng-attr-id="{{ wrapperId + '-wrapper' }}">
 
     </section>
 
