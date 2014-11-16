@@ -1,17 +1,13 @@
 'use strict';
 
 angular.module('WalletApp.WalletView.recordListDirective', [])
-  .directive('recordListDir', ['currencyService', function(currencyService){
+  .directive('recordListDir', [function(){
     return {
       restrict: 'E',
       templateUrl: './app/wallet/record_list_panel.html',
       scope: {
+        currency: '=',
         records: '='
-      },
-      link: function(scope){
-        currencyService.getUserCurrency().then(function(userCurrency){
-          scope.currency = userCurrency;
-        });
       }
     }
   }]);
