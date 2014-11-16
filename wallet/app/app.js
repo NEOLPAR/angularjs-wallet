@@ -37,8 +37,9 @@ WalletApp.config(['$routeProvider', function($routeProvider) {
     })
     .when('/reset', {
       resolve: {
-        reset: function($location, currencyService){
-          currencyService.removeUserCurrency();
+        reset: function($location, currencyService, walletService){
+          currencyService.resetUserCurrency();
+          walletService.resetRecordList();
           $location.path('/currency');
         }
       }

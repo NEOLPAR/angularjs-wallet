@@ -47,6 +47,14 @@ angular.module('WalletApp.WalletView.walletService', [])
         }
 
         return _totalAmount.total;
+      },
+      resetRecordList: function(){
+        localStorage.removeItem(_ls);
+        _recordList = new Array();
+        _totalAmount = {
+          length: 0,
+          total: 0
+        };
       }
     };
 
