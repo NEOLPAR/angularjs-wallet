@@ -2,11 +2,12 @@
 
 angular.module('WalletApp.WalletView.walletService', [])
   .factory('walletService', ['Record', function(Record){
-    var _recordList = new Array();
     var _totalAmount = {
       length: 0,
       total: 0
     };
+    var _ls = 'WalletApp.recordList';
+    var _recordList = JSON.parse(localStorage.getItem(_ls)) || new Array();
     var _calculateTotals = function(){
       var recordListLength = _recordList.length;
       var length = 0;
@@ -23,17 +24,21 @@ angular.module('WalletApp.WalletView.walletService', [])
     var _order = function(){ //TODO extra date order
 
     };
+    var _save = function(){
+      localStorage.setItem(_ls, JSON.stringify(_recordList));
+    };
 
     var walletManager = {
       addRecord: function(recordData){
         var instance = new Record(recordData);
 
         _recordList.push(instance);
+        _save();
 
         return this;
       },
       getAllRecords: function(){
-        return _recordList;
+        return (_recordList);
       },
       getTotalAmount: function(){
         //update only if it is necessary

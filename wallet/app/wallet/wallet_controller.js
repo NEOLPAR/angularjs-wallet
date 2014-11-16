@@ -5,18 +5,19 @@ angular.module('WalletApp.WalletView', [])
     console.log("WalletController");
     //TODO init load records
     //TODO save records
-    var updateTotal = (function update(){
+    var updateScope = (function update(){
       $scope.totalAmount = walletService.getTotalAmount();
+      $scope.records = walletService.getAllRecords();
+      currencyService.getUserCurrency().then(function(userCurrency){
+        $scope.currency = userCurrency;
+      });
+
       return update;
     })();
 
-    currencyService.getUserCurrency().then(function(userCurrency){
-      $scope.currency = userCurrency;
-    });
-
     $scope.addRecord = function(recordData){
-      $scope.records = walletService.addRecord(recordData).getAllRecords();
-      updateTotal();
+      $scope.records = walletService.addRecord(recordData);
+      updateScope();
     };
 
 
