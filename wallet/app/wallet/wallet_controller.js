@@ -8,11 +8,12 @@ angular.module('WalletApp.WalletView', [])
     $scope.records = walletService.addRecord({add: false, date: new Date(), amount: 3}).getAllRecords();
     //TODO init load records
     //TODO save records
-    //$scope.totalAmount = walletService.totalAmount();
+    $scope.totalAmount = walletService.getTotalAmount();
+
     currencyService.getUserCurrency().then(function(userCurrency){
       $scope.currency = userCurrency;
     });
-    
+
     $scope.addRecord = function(recordData){
       $scope.records = walletService.addRecord(recordData).getAllRecords();
     };
