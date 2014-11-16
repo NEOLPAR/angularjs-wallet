@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Wallet</title>
+    <link rel="stylesheet" href="./assets/css/toggle-switch.css"/>
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="#/wallet">Home</a></li>
             <li><a href="#/reset">Reset</a></li>
-            <li><a href="#/source">View source</a></li>
+            <li><a href="#/currency">Currencies</a></li>
+            <li><a href="https://github.com/NEOLPAR/angularjs-wallet" target="_blank">View source</a></li>
         </ul>
     </nav>
     <section ng-view>
@@ -22,12 +24,19 @@
     <script>angular.module("ngRoute") || document.write('<script src="./libs/angular-route.min.js"><\/script>')</script>
 
     <script src="./app/app.js"></script>
-    <script src="./app/wallet/wallet_controller.js"></script>
+    <script src="./app/shared_components/shared_filters.js"></script>
+    <script src="./app/shared_components/shared_services.js"></script>
+
     <script src="./app/currency/currency_controller.js"></script>
     <script src="./app/currency/currency_class.js"></script>
     <script src="./app/currency/currency_service.js"></script>
     <script src="./app/currency/currency_directive.js"></script>
 
-    <script src="./app/shared_components/shared_services.js"></script>
+
+    <script src="./app/wallet/wallet_controller.js"></script>
+    <script src="./app/wallet/record_class.js"></script>
+    <script src="./app/wallet/wallet_service.js"></script>
+    <script src="./app/wallet/add_record_directive.js"></script>
+    <script src="./app/wallet/record_list_directive.js"></script>
 </body>
 </html>l

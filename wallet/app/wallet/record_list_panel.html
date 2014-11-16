@@ -1,0 +1,7 @@
+<ul>
+    <li ng-repeat="record in records">
+        <span>{{record.date | dateFormat}}</span>
+        <span>{{record.amount | currency:''}}</span>
+        <span ng-bind-html="currency.sign | html"></span>
+    </li>
+</ul>
