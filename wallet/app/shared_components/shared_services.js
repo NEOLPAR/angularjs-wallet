@@ -1,3 +1,3 @@
 'user strict';
 
-angular.module('WalletApp.SharedServices', []);;
+angular.module('WalletApp.sharedComponents.services', []);

@@ -2,7 +2,9 @@
 
 var WalletApp = angular.module('WalletApp', [
   'ngRoute',
+  'WalletApp.sharedComponents.services',
   'WalletApp.sharedComponents.filters',
+  'WalletApp.sharedComponents.navDirective',
   'WalletApp.CurrencyView',
   'WalletApp.CurrencyView.CurrencyClass',
   'WalletApp.CurrencyView.currencyService',

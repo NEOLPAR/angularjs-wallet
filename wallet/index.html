@@ -6,14 +6,7 @@
     <link rel="stylesheet" href="./assets/css/main.css"/>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#/wallet">Home</a></li>
-            <li><a href="#/reset">Reset</a></li>
-            <li><a href="#/currency">Currencies</a></li>
-            <li><a href="https://github.com/NEOLPAR/angularjs-wallet" target="_blank">View source</a></li>
-        </ul>
-    </nav>
+    <nav-dir></nav-dir>
     <section ng-view ng-attr-id="{{ wrapperId + '-wrapper' }}">
 
     </section>
@@ -26,6 +19,7 @@
     <script src="./app/app.js"></script>
     <script src="./app/shared_components/shared_filters.js"></script>
     <script src="./app/shared_components/shared_services.js"></script>
+    <script src="./app/shared_components/nav_directive.js"></script>
 
     <script src="./app/currency/currency_controller.js"></script>
     <script src="./app/currency/currency_class.js"></script>
