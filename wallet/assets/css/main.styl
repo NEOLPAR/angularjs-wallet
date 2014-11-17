@@ -10,6 +10,31 @@ light_red= #FF9494
 .negative-color
   color: dark_red;
 
+#currency-wrapper
+  border-top: 1px solid #000000
+  ul
+    text-align center
+    li
+      display inline-block
+      background-color: #e4e4e4;
+      padding: 20px;
+      border: 1px solid black;
+      i
+        background-color: #e4e4e4;
+        padding: 20px;
+        border: 1px solid #e4e4e4;
+      &:not(:first-child):not(:last-child)
+        border-right none
+        border-left none
+      &:first-child
+        border-radius 20px 0 0 20px
+      &:last-child
+        border-radius 0 20px 20px 0
+      &.active
+        background-color light_blue
+        i
+          border: 1px solid black !important;
+
 #wallet-wrapper
   header
     border-bottom: 1px solid #000000;
