@@ -1,0 +1,231 @@
+@import 'normalize.css';
+@import 'font-awesome.min.css';
+@import 'toggle-switch.css';
+.negative-color {
+  color: #8f0000;
+}
+#currency-wrapper {
+  border-top: 1px solid #000;
+}
+#currency-wrapper ul {
+  text-align: center;
+}
+#currency-wrapper ul li {
+  display: inline-block;
+  background-color: #e4e4e4;
+  padding: 20px;
+  border: 1px solid #000;
+}
+#currency-wrapper ul li i {
+  background-color: #e4e4e4;
+  padding: 20px;
+  border: 1px solid #e4e4e4;
+}
+#currency-wrapper ul li:not(:first-child):not(:last-child) {
+  border-right: none;
+  border-left: none;
+}
+#currency-wrapper ul li:first-child {
+  -webkit-border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 20px;
+}
+#currency-wrapper ul li:last-child {
+  -webkit-border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0;
+}
+#currency-wrapper ul li.active {
+  background-color: #9ad6e3;
+}
+#currency-wrapper ul li.active i {
+  border: 1px solid #000 !important;
+}
+#wallet-wrapper header {
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  width: 100%;
+  overflow: hidden;
+}
+#wallet-wrapper header add-record-dir {
+  min-width: 430px;
+  margin: 0;
+  float: left;
+  padding-left: 20px;
+}
+#wallet-wrapper header add-record-dir form {
+  height: 100%;
+}
+#wallet-wrapper header add-record-dir form > * {
+  float: left;
+  margin: 0 5px;
+}
+#wallet-wrapper header add-record-dir form input,
+#wallet-wrapper header add-record-dir form button,
+#wallet-wrapper header add-record-dir form .formError {
+  margin-top: 13px;
+}
+#wallet-wrapper header add-record-dir form .formError {
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+#wallet-wrapper header add-record-dir form .formError .formErrorPanel {
+  background: #8f0000;
+  color: #fff;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 480px;
+  height: 50px;
+  text-align: center;
+  line-height: 2.5;
+  font-size: 130%;
+}
+#wallet-wrapper header add-record-dir form .formError .formErrorPanel .warning {
+  margin-top: 4px;
+  float: left;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #ff0;
+}
+#wallet-wrapper header .width-limit {
+  min-width: 480px;
+  max-width: 750px;
+  margin: auto;
+}
+#wallet-wrapper header total-dir {
+  margin: 0;
+  padding-right: 20px;
+  font-size: 2.5em;
+  float: right;
+}
+#wallet-wrapper article record-list-dir ul {
+  min-width: 480px;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+}
+#wallet-wrapper article record-list-dir ul li {
+  padding: 10px;
+}
+#wallet-wrapper article record-list-dir ul li .amount-currency {
+  float: right;
+}
+#wallet-wrapper article record-list-dir ul li:last-child {
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+#wallet-wrapper article record-list-dir ul li:nth-child(2n) {
+  background: #aedee9;
+}
+#wallet-wrapper article record-list-dir ul li:nth-child(2n).negative-color {
+  background: #ffa9a9;
+}
+#wallet-wrapper article record-list-dir ul li:nth-child(2n+1) {
+  background: #9ad6e3;
+}
+#wallet-wrapper article record-list-dir ul li:nth-child(2n+1).negative-color {
+  background: #ff9494;
+}
+nav {
+  background-color: #000;
+  overflow: hidden;
+  width: 100%;
+}
+nav .button-menu {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+nav ul {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: height 1s;
+  -moz-transition: height 1s;
+  -o-transition: height 1s;
+  -ms-transition: height 1s;
+  transition: height 1s;
+}
+nav ul.active {
+  height: 235px !important;
+}
+nav ul li {
+  padding: 20px;
+  margin-bottom: 1px;
+  background-color: #e4e4e4;
+}
+nav ul a:hover,
+nav ul a:link,
+nav ul a:visited,
+nav ul a:active {
+  color: #000;
+  text-decoration: none;
+}
+nav ul a:hover {
+  background-color: #fff;
+}
+@media (min-width: 992px) {
+  nav {
+    background-color: #000;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+  }
+  nav .button-menu {
+    display: none;
+  }
+  nav ul {
+    min-width: 410px;
+    max-width: 420px;
+    margin: auto;
+    height: inherit !important;
+  }
+  nav ul li {
+    min-width: 80px;
+    float: left;
+    height: 100%;
+    padding: 10px 10px 5px 10px;
+    background-color: #e4e4e4;
+    margin-right: 1px;
+    margin-bottom: 0;
+    border-bottom: 5px solid #e4e4e4;
+  }
+  nav ul a:hover,
+  nav ul a:link,
+  nav ul a:visited,
+  nav ul a:active {
+    color: #000;
+    text-decoration: none;
+  }
+  nav ul a:hover {
+    background-color: #fff;
+  }
+  nav ul a:hover:nth-child(1) li {
+    border-bottom: 5px solid #f00;
+  }
+  nav ul a:hover:nth-child(2) li {
+    border-bottom: 5px solid #008000;
+  }
+  nav ul a:hover:nth-child(3) li {
+    border-bottom: 5px solid #00f;
+  }
+  nav ul a:hover:nth-child(4) li {
+    border-bottom: 5px solid #ffa500;
+  }
+}

@@ -2,18 +2,16 @@
 
 angular.module('WalletApp.CurrencyView', [])
   .controller('CurrencyController', ['$location', '$scope', 'currencyService', function($location, $scope, currencyService){
-    console.log("CurrencyController");
-
+    $scope.wrapperId = "currency";
     $scope.currencies = currencyService.getAllCurrencies();
+    currencyService.getUserCurrency().then(function(userCurrency){
+      $scope.userCurrency = userCurrency;
+    });
 
     $scope.chooseCurrency = function(currency){
       currencyService.setUserCurrency(currency).then(
-        function(success){
-          console.log("bien");
+        function(){
           $location.path('/wallet');
-        },
-        function(error){
-          console.log("error");
         }
       );
     }

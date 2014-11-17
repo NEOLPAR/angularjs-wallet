@@ -48,7 +48,8 @@ angular.module('WalletApp.CurrencyView.currencyService', [])
         }
         return deferred.promise;
       },
-      removeUserCurrency: function(){
+      resetUserCurrency: function(){
+        _userCurrency = null;
         return _currencyInstance.removeUserCurrency();
       }
     };

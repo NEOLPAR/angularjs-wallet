@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Wallet</title>
-    <link rel="stylesheet" href="./assets/css/toggle-switch.css"/>
-    <link rel="stylesheet" href="./assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./assets/css/main.css"/>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#/wallet">Home</a></li>
-            <li><a href="#/reset">Reset</a></li>
-            <li><a href="#/currency">Currencies</a></li>
-            <li><a href="https://github.com/NEOLPAR/angularjs-wallet" target="_blank">View source</a></li>
-        </ul>
-    </nav>
-    <section ng-view>
+    <nav-dir></nav-dir>
+    <section ng-view ng-attr-id="{{ wrapperId + '-wrapper' }}">
 
     </section>
+
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script>window.angular || document.write('<script src="./libs/angular.min.js"><\/script>')</script>
@@ -27,6 +20,7 @@
     <script src="./app/app.js"></script>
     <script src="./app/shared_components/shared_filters.js"></script>
     <script src="./app/shared_components/shared_services.js"></script>
+    <script src="./app/shared_components/nav_directive.js"></script>
 
     <script src="./app/currency/currency_controller.js"></script>
     <script src="./app/currency/currency_class.js"></script>

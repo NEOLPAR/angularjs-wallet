@@ -1,23 +1,33 @@
-<div>
-    <form name="addRecordForm" novalidate ng-submit="addRecord(record)">
-        <div class="onoffswitch">
-            <input type="checkbox" id="myonoffswitch" class="onoffswitch-checkbox" name="onoffswitch"
-                   ng-model="record.add"/>
-            <label class="onoffswitch-label" for="myonoffswitch">
-                <span class="onoffswitch-inner"></span>
-                <span class="onoffswitch-switch"></span>
-            </label>
-        </div>
-        <div>
-            <input type="number" name="amount" min="0.01" placeholder="Amount" step="0.01" required
-                   ng-model="record.amount"/>
-            <span ng-show="addRecordForm.amount.$error.number">
-                The value must be a number!
-            </span>
-            <span ng-show="addRecordForm.amount.$error.min">
-                The value must be positive and different of 0!
-            </span>
-        </div>
-        <button type="submit" ng-disabled="addRecordForm.$invalid" class="button radius">Submit</button>
-    </form>
-</div>
+<form name="addRecordForm" novalidate ng-submit="addRecord(record)">
+    <div class="onoffswitch">
+        <input type="checkbox" id="myonoffswitch" class="onoffswitch-checkbox" name="onoffswitch" ng-model="record.add"/>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+    <input type="number" name="amount" min="0.01" placeholder="Amount" step="0.01" required ng-model="record.amount"/>
+
+    <button type="submit" ng-disabled="addRecordForm.$invalid" class="button radius">
+        {{
+          {
+            true: 'Add Fund',
+            false: 'Subtract Fund'
+          }
+          [record.add]
+        }}
+    </button>
+
+    <div class="formError" ng-if="addRecordForm.amount.$error.number" ng-click="record.amount = null">
+        <span class="formErrorPanel">
+            <div class="warning"></div>
+            The value must be a number!
+        </span>
+    </div>
+    <div class="formError" ng-if="addRecordForm.amount.$error.min" ng-click="record.amount = null">
+        <span class="formErrorPanel">
+            <div class="warning"></div>
+            The value must be positive and different of 0!
+        </span>
+    </div>
+</form>

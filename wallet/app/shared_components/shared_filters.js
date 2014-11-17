@@ -18,4 +18,17 @@ angular.module('WalletApp.sharedComponents.filters', [])
     return function(input){
       return $sce.trustAsHtml(input);
     }
+  }])
+  //It represent the negative number -10.00 rather than (10.00)
+  .filter('customCurrency', ["$filter", function ($filter) {
+    return function(amount){
+      var currency = $filter('currency');
+      var currencySymbol = '';
+
+      if(amount < 0){
+        return currency(amount, currencySymbol).replace("(", "-").replace(")", "");
+      }
+
+      return currency(amount, currencySymbol);
+    };
   }]);

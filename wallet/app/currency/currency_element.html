@@ -1,3 +1,4 @@
-<li ng-repeat="currency in currencies" ng-click="chooseCurrency(currency)">
+<li ng-repeat="currency in currencies" ng-click="chooseCurrency(currency)"
+    ng-class="{'active': userCurrency.name === currency.name}">
     <i class="fa fa-5x" ng-class="'fa-' + currency.name"></i>
 </li>

@@ -2,7 +2,9 @@
 
 var WalletApp = angular.module('WalletApp', [
   'ngRoute',
+  'WalletApp.sharedComponents.services',
   'WalletApp.sharedComponents.filters',
+  'WalletApp.sharedComponents.navDirective',
   'WalletApp.CurrencyView',
   'WalletApp.CurrencyView.CurrencyClass',
   'WalletApp.CurrencyView.currencyService',
@@ -37,8 +39,9 @@ WalletApp.config(['$routeProvider', function($routeProvider) {
     })
     .when('/reset', {
       resolve: {
-        reset: function($location, currencyService){
-          currencyService.removeUserCurrency();
+        reset: function($location, currencyService, walletService){
+          currencyService.resetUserCurrency();
+          walletService.resetRecordList();
           $location.path('/currency');
         }
       }

@@ -7,7 +7,8 @@ angular.module('WalletApp.CurrencyView.currencyDirective', [])
       templateUrl: './app/currency/currency_element.html',
       scope: {
         currencies: '=',
-        choose: '&'
+        choose: '&',
+        userCurrency: '='
       },
       link: function(scope){
         scope.chooseCurrency = function(currency){

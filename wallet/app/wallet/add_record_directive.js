@@ -9,13 +9,20 @@ angular.module('WalletApp.WalletView.addRecordDirective', [])
         add: '&'
       },
       link: function(scope){
-        scope.record = {
+        scope.recordClear = {
           add: true
         }
+
+        var resetForm = (function reset() {
+          scope.record = angular.copy(scope.recordClear);
+
+          return reset;
+        })();
 
         scope.addRecord = function(recordData){
           recordData.date = new Date();
           scope.add()(recordData);
+          resetForm();
         }
       }
     };
